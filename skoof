@@ -1,21 +1,13 @@
 #!/usr/bin/python3
-# v0.1.2
+# v0.1.3
 
 import sys;
 from os import system;
 from time import sleep;
 from platform import uname;
 
-innv = "ВНУТРЕННИЙ ГОЛОС:"
-nSkoof = "???:"
-skoof = "СКУФ:"
-dc = "ДИКТОР:"
-game = "ИГРА:"
-alt0 = "КСЮША:"
-alt1 = "НАСТЯ:"
-alt2 = "АЛИСА:"
-
-press_enter = ">> Нажмите <Enter>, чтобы продолжить <<\n";
+from writing import write;
+from names import *;
 
 plat = uname().system;
 if ((plat == "Linux") or (plat == "MacOS")):
@@ -24,19 +16,6 @@ elif (plat == "Windows"): # Говно
   system("cls");
   print("Поставь линукс :)");
 
-# A function for writing text to the screen with an animation
-def write(title: str, s: str, duration: int, autonext: bool = False):
-  for i in range(len(title)+1):
-    print(f"\r{title[:i]}", end="");
-    sleep(0.028);
-  for i in range(len(s)+1):
-    print(f"\r{title} {s[:i]}", end="");
-    sleep(duration/1000);
-  if (autonext):
-    sleep(0.2);
-    print();
-  else:
-    input();
 
 def main(argc: int, argv: list):
   tsp = 45;
@@ -255,7 +234,7 @@ def main(argc: int, argv: list):
   sleep(0.6);
   write(innv, "Танки!", tsp);
   write(innv, "ТАНКИ!", tsp);
-  write(dc, "Привычным росчерком руки с зажатой в ней мывшью ты подводишь курсор к столь милому сердцу ярлыку...", tsp);
+  write(dc, "Привычным росчерком руки с зажатой в ней мышью ты подводишь курсор к столь милому сердцу ярлыку...", tsp);
   write(innv, "Жми!", tsp);
   write(skoof, "Что-то не то.", tsp);
   write(skoof, "Танки, танки, танки!", tsp);
@@ -289,8 +268,67 @@ def main(argc: int, argv: list):
   write(dc, "На экране загорается логотип, а после прогружается весь сайт полностью.", tsp);
   sleep(0.6);
   write(innv, "Вот это да! Ты не врал!", tsp);
+  write(skoof, "Ага, между прочим, очень удобно, и пиндосов такого нет...", tsp);
+  write(skoof, "Можно получить справки, выписки, проверить штрафы... Так, падажжи...", tsp);
+  write(dc, "Твой взгляд внезапно падает на баннер, который ты раньше не видел.", tsp);
+  write(dc, "Твоё сердце начинает биться чаще, словно карбюратор хорошо смазанной Лады 2104", tsp); # не понял шутку
+  write(dc, "(Классическая машина, лучшая в серии)", tsp); # а теперь понял
+  write(skoof, "Альтушка?", tsp); # ооо щас самая интересная часть начнётся
+  write(skoof, "Это же тяночка, верно!", tsp);
+  write(skoof, "Которая как её... гот... эмо?..", tsp);
+  write(skoof, "А, неважно.", tsp);
+  write(skoof, "Бесили меня всегда эти альтушки.", tsp);
+  write(skoof, "Как вижу такую, так сразу хочется...", tsp);
+  write(skoof, "Ну вы понимаете...", tsp); # я понял
+  write(skoof, "Хочется такую...", tsp);
+  write(innv, "Поняшить под пледиком!", tsp);
+  write(skoof, "При этом понимаю, что такой девчонке навряд ли понравится сорокалетний мужик...", tsp);
+  write(skoof, "К тому же жир... ОБЫЧНОГО телосложения..", tsp);
+  write(skoof, "С короткой стрижкой.", tsp);
+  write(skoof, "Дабы не получать урона самолюбию, я предпочитаю при встрече с такими не заявлять о себе.", tsp);
+  write(skoof, "И от этого бешусь ещё больше.", tsp);
+  write(skoof, "Эх...", tsp);
+  write(skoof, "Эх, если бы такая девчонка полюбила меня просто так...", tsp);
+  write(skoof, "Не за деньги, красоту, ум, или чувство юмора...", tsp);
+  write(skoof, "А просто так!", tsp);
+  write(dc, "Сладостная пелена застилает твой взор, эфирные грёзы затмевают твой разум.", tsp);
+  write(dc, "Ты резко встряхиваешь головой, чтобы сбросить с себя наваждение.", tsp);
+  sleep(0.3);
+  write(skoof, "Так, какой у меня там пароль от Скуфуслуг?!", tsp);
+  passwords = [0, 1, 2, 3];
+  while (passwords):
+    write(game, "Введите пароль", tsp, True);
+    print(f"{'0 -- skoof69'+chr(10) if (0 in passwords) else ''}{'1 -- i_wannafuckvirai_1'+chr(10) if (1 in passwords) else ''}{'2 -- sobakistan4'+chr(10) if (2 in passwords) else ''}3 -- Я не помню пароль\n");
+    temp = input(">> ");
+    temp = (int(temp) % 4) if (temp) else 0;
+    while (temp not in passwords):
+      print(f"{'0 -- skoof69'+chr(10) if (0 in passwords) else ''}{'1 -- i_wannafuckvirai_1'+chr(10) if (1 in passwords) else ''}{'2 -- sobakistan4'+chr(10) if (2 in passwords) else ''}3 -- Я не помню пароль\n");
+      temp = input(">> ");
+      temp = (int(temp) % 4) if (temp) else 0;
+    if ((temp == 0)):
+      write(game, "Неверный пароль... Попробуйте ещё раз, уважаемый скуф!", tsp);
+      passwords.remove(0);
+    elif ((temp == 1)):
+      write(game, "Неверный пароль... Попробуйте ещё раз, уважаемый скуф!", tsp);
+      passwords.remove(1);
+    elif ((temp == 2)):
+      write(game, "Неверный пароль... Попробуйте ещё раз, уважаемый скуф!", tsp);
+      passwords.remove(2);
+    elif ((temp == 3)):
+      write(skoof, "Чёрт! Чёрт! Чёрт!", tsp);
+      write(skoof, "Какой же там пароль!?", tsp);
+      write(skoof, "Зачем я убрал этот стикер с монитора...", tsp);
+      write(innv, "Дружище, не кипятись!", tsp);
+      write(innv, "Может, я помогу тебе покопаться в глубинах твоего сознания?", tsp);
+      write(game, "Согласиться на помощь внутреннего голоса?", tsp);
+      input(press_enter);
+      write(skoof, "Окей, терять уже нечего.", tsp);
+      write(dc, "Ты закрываешь глаза.", tsp); # ооо щас долго будет
+      passwords = [];
+  write(dc, "Ты ныряешь в океан собственных мыслей, путешествуя по складу памяти.", tsp);
+  write(dc, "Здесь не очень опрятно и много всякого хлама.")
 
-  write(game, "ПРОДОЛЖЕНИЕ СЛЕДУЕТ... v0.1.2", tsp);
+  write(game, "ПРОДОЛЖЕНИЕ СЛЕДУЕТ... v0.1.3", tsp);
 
   return 0;
 
