@@ -1,3 +1,12 @@
 Version 0.1.2
 
-If you are using Windows, change the name to skoof.py, and run it with python3
+How to use:
+  Linux:
+    ```bash
+    $ chmod 775 skoof
+    $ ./skoof
+    ```
+  Windows:
+    ```bat
+    python3 skoof
+    ```
